@@ -5,7 +5,7 @@ module OmniAuth
     # OmniAuth strategy for Etsy
     class Etsy < OmniAuth::Strategies::OAuth2
       option :name, :etsy
-      option :pkce, true
+      option :pkce, false
       option :callback_url
 
       option :setup, lambda { |env|
