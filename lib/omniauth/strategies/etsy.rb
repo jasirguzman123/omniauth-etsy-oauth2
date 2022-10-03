@@ -6,7 +6,7 @@ module OmniAuth
     class Etsy < OmniAuth::Strategies::OAuth2
       option :name, :etsy
       option :pkce, true
-      option :pkce_verifier, "superstate"
+      option :pkce_verifier, "zWqlP9Z5eQOsx2IF7ZsbHo8H3ygjHbxEDo6BlVXnXYapzM2e"
       option :callback_url
 
       option :setup, lambda { |env|
