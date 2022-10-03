@@ -6,7 +6,6 @@ module OmniAuth
     class Etsy < OmniAuth::Strategies::OAuth2
       option :name, :etsy
       option :pkce, true
-      option :pkce_verifier, "zWqlP9Z5eQOsx2IF7ZsbHo8H3ygjHbxEDo6BlVXnXYapzM2e"
       option :callback_url
 
       option :setup, lambda { |env|
@@ -20,6 +19,7 @@ module OmniAuth
         etsy_auth_params = etsy_auth_params&.with_indifferent_access
 
         strategy.options[:authorize_params] = etsy_auth_params
+        strategy.options[:token_params] = { code_Verifier: "zWqlP9Z5eQOsx2IF7ZsbHo8H3ygjHbxEDo6BlVXnXYapzM2e" }
       }
 
       uid { URI.parse(options[:client_options][:site]).host }
