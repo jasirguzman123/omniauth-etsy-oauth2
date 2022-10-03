@@ -19,7 +19,7 @@ module OmniAuth
         etsy_auth_params = etsy_auth_params&.with_indifferent_access
 
         strategy.options[:authorize_params] = etsy_auth_params
-        strategy.options[:token_params] = { code_verifier: strategy.session["code_verifier"]
+        strategy.options[:token_params] = { code_verifier: strategy.session["code_verifier"] }
       }
 
       uid { URI.parse(options[:client_options][:site]).host }
